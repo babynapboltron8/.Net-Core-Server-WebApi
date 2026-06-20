@@ -1,4 +1,4 @@
-namespace MyFisrtApi.Models
+namespace ServerApi.Models
 {
     public class Post
     {
