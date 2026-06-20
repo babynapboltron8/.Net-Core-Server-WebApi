@@ -19,10 +19,10 @@
 ## HTTPRepl test APIs
 
 - Install HttpRepl: `dotnet tool install -g Microsoft.dotnet-httprepl`
-- Command to connect API: `httprepl http://localhost:5031 (URL application)`
-- Command lists endpoints: http://localhost:5031/> `ls or dir`
+- Command to connect API: `httprepl http://localhost:5091 (URL application)`
+- Command lists endpoints: http://localhost:5091/> `ls or dir`
 - CD command to navigate endpoints: `cd (endpoints ex. WeatherForecast)`
-- Command get or prefer http method: http://localhost:5031/WeatherForecast> `get`
+- Command get or prefer http method: http://localhost:5091/WeatherForecast> `get`
 
 ## Debugging in VSCode
 
