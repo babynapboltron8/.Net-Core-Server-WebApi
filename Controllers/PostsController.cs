@@ -54,5 +54,32 @@ namespace ServerApi.Controllers
             // Return HTTP 200 and the post data.
             return Ok(post);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Post>> CreatePost(Post post)
+        {
+            await _postService.CreatePost(post);
+
+            // Return HTTP 201 Created with the new post data.
+            return CreatedAtAction(nameof(GetPosts), new { id = post.Id }, post);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePost(int id, Post post)
+        {
+            if (id != post.Id)
+            {
+                return BadRequest();
+            }
+
+           var updatedPost = await _postService.UpdatePost(id, post);
+
+            if (updatedPost == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(post);
+        }
     }
 }
