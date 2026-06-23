@@ -58,16 +58,17 @@ namespace ServerApi.Services
 
         // DELETE
         // Removes a post by ID.
-        public Task DeletePost(int id)
+        public Task<bool> DeletePost(int id)
         {
             var post = AllPosts.FirstOrDefault(x => x.Id == id);
 
             if (post != null)
             {
                 AllPosts.Remove(post);
+                return Task.FromResult(true);
             }
 
-            return Task.CompletedTask;
+            return Task.FromResult(false);
         }
     }
 }

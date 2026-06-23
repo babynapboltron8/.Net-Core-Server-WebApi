@@ -137,5 +137,31 @@ namespace ServerApi.Controllers
             // Return HTTP 200 OK with the updated data.
             return Ok(post);
         }
+        // ==================================================
+        // DELETE: api/posts/1
+        // ==================================================
+        //
+        // Handles HTTP DELETE requests.
+        //
+        // Used to delete an existing post.
+        //
+        // Example:
+        // DELETE /api/posts/1
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePost(int id)
+        {
+            // Call the service layer to delete the post.
+            var deleted = await _postService.DeletePost(id);
+
+            // If no post was found with the given ID,
+            // return HTTP 404 Not Found.
+            if (!deleted)
+            {
+                return NotFound();
+            }
+
+            // Return HTTP 200 OK.
+            return Ok();
+        }
     }
 }
