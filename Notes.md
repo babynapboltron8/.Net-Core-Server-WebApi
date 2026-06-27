@@ -38,3 +38,7 @@
 
 - Install the dotnet-ef tool: `dotnet tool install --globall dotnet-ef`
 - Install EF Core packages: `dotnet add package Microsoft.EntityFrameworkCore.SqlServer` and `dotnet add package Microsoft.EntityFrameworkCore.Design`
+
+## Creating the database migrationn
+
+- Install the command: `dotnet ef migrations add InitialDb`
